@@ -1,20 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
-</head>
-<body>
-    <div class="container"> 
-        <div class="navbar navbar-light bg-light ">
-            <a class="button " href="login/" role="button">Login</a> 
-            <a class="button " href="signup/" role="button"> Sign Up</a>
-        </div>
+{% extends 'base.html' }
+{% block content %}
+    Welcome User!<br/>
+    Please go through the below products.
+    <div class="container">
+        <div class="nav"> </div>
     </div>
-    <div>
-        Welcome to the Girikalan Magic show.
-    </div>
-</body>
-</html>
+{% endblock %}

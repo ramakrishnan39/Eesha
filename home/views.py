@@ -7,13 +7,13 @@ from django.contrib.auth import authenticate, login
 
 # Create your views here.
 def v_index(request):
-    return render(request, 'index.html', context={} )
+    return render(request, 'index.html' )
 
 def v_login(request):
-    return render(request, 'registration/login.html' )
+    return redirect(request, 'registration/login.html' )
 
 def v_signup(request):
-    return render(request, 'registration/register.html' )
+    return redirect(request, 'registration/register.html' )
 
 def v_products(request):
     return render(request)

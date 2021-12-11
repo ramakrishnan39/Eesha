@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
-    <p class="label"> Welcome to Eesha Enterprisers </p>
-    <span class="label"> Please login or sign up </span><br /><br />
-    <a class="btn" href="login/"> Login </a> &nbsp;&nbsp;&nbsp; / &nbsp;&nbsp;&nbsp;<a class="btn" href="signup/"> Sign up
-</a>
+<div>
+    
+</div>
+
 <br />
-    {% if messages %}
-        {% for message in messages %}
-            {{ message }}
-        {% endfor %}
-    {% endif %}
+{% if messages %}
+{% for message in messages %}
+{{ message }}
+{% endfor %}
+{% endif %}
 {% endblock %}
