@@ -11,8 +11,8 @@ class Category(models.Model):
 
 class Product(models.Model):
     prod_id = BigAutoField(primary_key="True")
-    prod_name = CharField(max_lenth=250)
-    prod_category = ForeignKey(Category.cat_id, on_delete=models.CASCADE())
+    prod_name = CharField(max_length=250)
+    prod_category = ForeignKey(Category, on_delete=models.CASCADE)
 
 
 class Customer(models.Model):
@@ -25,12 +25,12 @@ class Customer(models.Model):
 
 class Order(models.Model):
     ord_id = BigAutoField(primary_key="True")
-    cust_id =ForeignKey(Customer.cust_id, on_delete=models.CASCADE())
-    prod_id = ForeignKey(Product.prod_id, on_delete=models.CASCADE())
+    cust_id =ForeignKey(Customer, on_delete=models.CASCADE)
+    prod_id = ForeignKey(Product, on_delete=models.CASCADE)
 
 class ProdImages(models.Model):
     img_id = BigAutoField(primary_key="True")
-    prod_id= ForeignKey(Product.prod_id, on_delete=models.CASCADE())
+    prod_id= ForeignKey(Product, on_delete=models.CASCADE)
     img = ImageField()
 
 

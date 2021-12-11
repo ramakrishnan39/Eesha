@@ -1,0 +1,13 @@
+{% extends 'appbody.html' %}
+{% load static %}
+{% block app %}
+<div>
+    <div>
+        Hi {{ user.cust_name }} ! <br/>
+        Please verify your address. <br/>
+        <br/>
+        {{ user.address }}
+        <input type="button" name="btn_pay" value="Proceed to Pay" >
+    </div>
+</div>
+{% endblock %}

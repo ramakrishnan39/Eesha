@@ -1,9 +1,18 @@
 body{
-    background-color: aquamarine;
-    color: brown;
+    background-color: rgb(48, 158, 76);
+    color: rgb(58, 13, 13);
 }
 
 .button{
     color: beige;
     border: black;
 }
+
+.head_title{
+    display: inline-flex;
+}
+
+.log_right{
+    width: 70%;
+}
+
