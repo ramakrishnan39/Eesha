@@ -38,7 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'home',
+    'home.apps.HomeConfig',
+    'index.apps.IndexConfig',
+    'customers.apps.CustomersConfig',
+    'products.apps.ProductsConfig',
+    
 ]
 
 MIDDLEWARE = [
@@ -56,7 +60,14 @@ ROOT_URLCONF = 'Eesha.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATES_DIR, os.path.join(TEMPLATES_DIR,"registration")],
+        'DIRS': [
+            TEMPLATES_DIR, 
+            os.path.join(BASE_DIR, 'home' ,'templates' ),
+            os.path.join(BASE_DIR, 'index', 'templates'),
+            os.path.join(BASE_DIR, 'products', 'templates'),
+            os.path.join(BASE_DIR, 'customers', 'templates'),
+
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -121,13 +132,17 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'statics'),
 ]
+MEDIAFILES_DIRS = [
+    os.path.join(BASE_DIR, 'app_media'),
+]
 
 STATIC_ROOT = os.path.join(BASE_DIR,'static')
-
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
