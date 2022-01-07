@@ -12,22 +12,24 @@
   {% endblock hd%}
 </head>
 <body>
-  <div class="nav">
-    <div class="title">
-      Eesha
-    </div>
-    {% if user.is_authenticated %}
-        <div class="menu-item">
-          {{ user.first_name }}
-          <a href="{% url 'Logout' %}" class="menu-item"> Log out </a>
-        </div>
-    {% else %}
-        <div class="menus">
-          <a href="{% url 'LogSign' %}" class="menu-item"> Login/Signup </a>
-        </div>
-    {% endif %}
-  </div>
+  <header class="nav">
+      <h1 class="title">Eesha Enterprises </h1>
+      <div class="menu-item">
+      {% if user.is_authenticated %}
+            <a href="#" class="btn"> {{ user.first_name }} </a>
+            <a href="{% url 'Logout' %}" class="btn"> Log out </a>
+      {% else %}
+            <a href="{% url 'LogSign' %}" class="btn"> Login/Signup </a>
+      {% endif %}
+      </div>
+  </header>
+  <section class="app-body">
     {% block bd %}
     {% endblock bd %}
+  </section>
+    <footer class="txt ftr">
+        <p>Website created and maintained by Ramakrishnan P.
+        Contact 9842378754, ramakrishnanp30798@gmail.com </p>
+    </footer>
 </body>
 </html>

@@ -1,10 +1,7 @@
+from django.forms.forms import Form
 from django.shortcuts import redirect, render
-from .forms_customers import FormUser
+from .forms_customers import FormCustomer
 
 # Create your views here.
 def v_login(request):
-  page = ""
-  if request.method == 'POST':
-
-    return render(request, 'home.html')
-  return render(request, 'logsign.html', {'page' : page , })
+  return render(request, 'logsign.html')
