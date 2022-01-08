@@ -6,5 +6,6 @@ from django.conf import settings
 from .views_customers import *
 
 urlpatterns = [
-    path('login-signup/',v_login, name="LogSign" ),
+    path('login/',v_login, name="Login" ),
+    path('signup/',v_signup, name="Signup" ),
 ]

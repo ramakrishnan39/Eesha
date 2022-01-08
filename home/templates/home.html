@@ -4,32 +4,19 @@
 {% block hd %}
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
 {% endblock hd %}
+{% load static %}
 {% block bd %}
     <h1 class="txt">Products</h1>
     <div class="page">
-        <div class="card">
-            <p class="txt">Oppo A54</p>
-            <img src="{% static 'imgs/oppo.png' %}" alt="product_image" height="100px"  width="auto" >
-            <p class="txt">Price Rs.12,000</p>
-            <a href="#" class="btn">Buy</a>
-        </div>
-        <div class="card">
-            <p class="txt">Oppo A54</p>
-            <img src="{% static 'imgs/oppo.png' %}" alt="product_image" height="100px"  width="auto" >
-            <p class="txt">Price Rs.12,000</p>
-            <a href="#" class="btn">Buy</a>
-        </div>
-        <div class="card">
-            <p class="txt">Oppo A54</p>
-            <img src="{% static 'imgs/oppo.png' %}" alt="product_image" height="100px"  width="auto" >
-            <p class="txt">Price Rs.12,000</p>
-            <a href="#" class="btn">Buy</a>
-        </div>
-        <div class="card">
-            <p class="txt">Oppo A54</p>
-            <img src="{% static 'imgs/oppo.png' %}" alt="product_image" height="100px"  width="auto" >
-            <p class="txt">Price Rs.12,000</p>
-            <a href="#" class="btn">Buy</a>
-        </div>
+        {% if products %}
+            {% for p in products %}
+                <div class="card">
+                    <p class="txt">{{ p.prod_name }} </p>
+                    <img src="{{ p.prod_img.url }}" alt="product_image" height="100px"  width="auto" >
+                    <p class="txt"> {{ p.prod_price }} </p>
+                    <a href="#" class="btn">Explore More Details</a>
+                </div>
+            {% endfor %}
+        {% endif %}
     </div>
 {% endblock bd %}

@@ -1,5 +1,26 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block bd %}
-   <p> Please login or go <a href="{% url 'Home' %}" class="btn">Home</a> </p>
+    {% if formlog %}
+    <form action="" method="post"> 
+        {% csrf_token %}
+        
+       {{ formlog }}
+
+        <input type="submit" value="Login" class="btn" />
+
+        <p>   If you are not registered user then please  
+            <a href="{% url 'Login'  %}" class="linktxt"> Register </a> here </p> 
+    </form>
+    {% endif %}
+
+    {% if formsign %}
+    <form action="" method="post"> {{ formsign }} 
+        <input type="submit" value="Signup" class="btn" />
+        <p>   Already a customer? Please 
+        <a href="{% url 'LogSign' %}" class="linktxt"> Login </a> Here </p> 
+    </form>
+    {% endif %}
+
+   <p> Please login to go <a href="{% url 'Home' %}" class="btn">Home</a> </p>
 {% endblock bd %}

@@ -19,7 +19,7 @@
             <a href="#" class="btn"> {{ user.first_name }} </a>
             <a href="{% url 'Logout' %}" class="btn"> Log out </a>
       {% else %}
-            <a href="{% url 'LogSign' %}" class="btn"> Login/Signup </a>
+            <a href="{% url 'Login' %}" class="btn"> Login/Signup </a>
       {% endif %}
       </div>
   </header>
