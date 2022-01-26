@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home.apps.HomeConfig',
-    'index.apps.IndexConfig',
     'customers.apps.CustomersConfig',
     'products.apps.ProductsConfig',
     
@@ -62,10 +61,9 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             TEMPLATES_DIR, 
-            os.path.join(BASE_DIR, 'home' ,'templates' ),
-            os.path.join(BASE_DIR, 'index', 'templates'),
-            os.path.join(BASE_DIR, 'products', 'templates'),
-            os.path.join(BASE_DIR, 'customers', 'templates'),
+            os.path.join(BASE_DIR, 'home' ,'html' ),
+            os.path.join(BASE_DIR, 'products', 'html'),
+            os.path.join(BASE_DIR, 'customers', 'html'),
 
         ],
         'APP_DIRS': True,

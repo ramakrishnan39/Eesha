@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block bd %}
+
+    <div class="d-form">
+    {% if type == "log" %}
+    <form action="" method="POST" class="frm"> 
+        {% csrf_token %}
+        Username <input type="text" name="uname" id="uname" class="txt txtbox" placeholder="Username"> <br>
+        Password <input type="password" name="passwd" id="paswd" class="txt txtbox" placeholder="Password" > <br>
+        <input type="submit" value="Login" class="btn" />
+        <p>   If you are not registered user then please  
+            <a href="{% url 'Signup'  %}" class="linktxt"> Register </a> here </p> 
+    </form>
+    {% endif %}
+
+    {% if type == "sign" %}
+    <form action="" method="post" class="frm">
+        {% csrf_token %} 
+        <table>
+            <tr>
+              <td>  <p class="txt">Username  </p></td> <td>{{ form.username }}</td> 
+            </tr>
+            <tr>
+                <td>  <p class="txt">Password </p></td>  <td>  {{ form.password1 }} </td>
+            </tr>
+            <tr>
+                <td colspan="2"> <p class="txt"> {{ form.password1.help_text }} </p> </td>
+            </tr>
+            <tr>
+                <td><p class="txt"> Confirm Password </p> </td> <td> {{ form.password2 }} </td>
+            </tr>
+        </table>
+        <input type="submit" value="Signup" class="btn" />
+        <p>   Already a customer? Please 
+        <a href="{% url 'Login' %}" class="linktxt"> Login </a> here </p> 
+    </form>
+    {% endif %}
+
+    </div>
+{% endblock bd %}

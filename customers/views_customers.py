@@ -1,14 +1,12 @@
+from django.contrib.auth.forms import UserCreationForm
 from django.forms.forms import Form
 from django.shortcuts import redirect, render
-from .forms_customers import FormCustomer
-
 
 # Create your views here.
 def v_login(request):
-  frm = FormCustomer()
-  return render(request, 'logsign.html', { 'formlog' : frm } )
+  return render(request, 'auth.html', { 'type' : 'log' } )
 
 def v_signup(request):
-  frm = FormCustomer()
-  context = { 'formsign' : frm }
-  return render(request , '' , context)
+  frm = UserCreationForm()
+  context = { 'type' : 'sign', 'form' : frm }
+  return render(request , 'auth.html' , context)
